@@ -1,0 +1,152 @@
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
+    color: $primary_color;
+    text-decoration: none;
+    margin-bottom: 50px !important;
+    text-align: center;
+  }
+  .container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    border-top: $primary_color solid 15px;
+
+    @include media(sm) {
+      width: auto;
+      max-width: 300px;
+    }
+    .content {
+      box-shadow: -1px 0px 7px 1px$light_grey_color;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .add-task {
+        width: 100%;
+        .input {
+          width: 80%;
+          padding: 15px 0;
+          padding-left: 20px;
+          border: none;
+        }
+        .btn {
+          width: 20%;
+          padding: 15px 0;
+          cursor: pointer !important;
+          background-color: transparent;
+          border: none;
+        }
+      }
+      .infinite-scroll-component__outerdiv {
+        width: 100%;
+        .infinite-scroll-component {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          .card {
+            padding: 1rem 0;
+            color: inherit;
+            text-decoration: none;
+            border: 1px solid $grey_color;
+            transition: color 0.15s ease, border-color 0.15s ease;
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            .checkBox {
+              margin: 0 20px;
+              align-self: center;
+            }
+            .edit-input {
+              width: 80%;
+              padding: 15px 0;
+              padding-left: 20px;
+              border: none;
+            }
+            .edit-btn {
+              width: 20%;
+              padding: 15px 0;
+              cursor: pointer !important;
+              background-color: transparent;
+              border: none;
+            }
+            .text {
+              width: 100%;
+              word-wrap: break-word;
+              overflow: hidden;
+              margin-right: 20px;
+            }
+            .btn {
+              display: none;
+              margin-right: 20px;
+              align-self: center;
+              cursor: pointer;
+            }
+          }
+          .card:hover {
+            color: $primary_color;
+            border-color: $primary_color;
+            .btn {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .options {
+      width: 99%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      background-color: $light_grey_color;
+      border-radius: 3px;
+      @include media(sm) {
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px 0;
+      }
+      .filters {
+        display: flex;
+        @include media(sm) {
+          justify-content: center;
+        }
+        .block {
+          padding: 5px;
+          cursor: pointer;
+        }
+      }
+      .counter {
+        align-self: center;
+        margin-left: 20px;
+        @include media(sm) {
+          margin: 0;
+        }
+      }
+      .clearBtn {
+        margin-right: 20px;
+        align-self: center;
+        @include media(sm) {
+          margin: 0;
+        }
+      }
+      .bold {
+        font-weight: bold;
+      }
+    }
+  }
+}
